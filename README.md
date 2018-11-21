@@ -16,4 +16,4 @@ The queries that were created to query the above data in the article:
 
 [Constructing SPARQL Queries](https://medium.com/wallscope/constructing-sparql-queries-ca63b8b9ac02)
 
-can be found in the `queries` directory.
+can be found in the queries directory.
