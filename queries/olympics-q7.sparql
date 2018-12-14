@@ -1,0 +1,16 @@
+# Query 7 - List every sport's name that has a stored team size in DBpedia and return these sizes next to the corresponding sport.
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+SELECT ?sportName ?teamSize
+WHERE {
+ ?sport rdf:type   dbo:Sport ;
+        rdfs:label ?sportName .
+ 
+ SERVICE <http://dbpedia.org/sparql> {
+ ?dbsport rdfs:label   ?sportName ;
+          dbo:teamSize ?teamSize .
+ }
+}
