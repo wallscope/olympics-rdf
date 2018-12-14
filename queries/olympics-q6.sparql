@@ -1,4 +1,6 @@
-# Query 6 - Get a list of every city that an athlete from Serbia and Montenegro competed in. Count the number of males and females that ever competed in one of those cities and return these counts.
+# Query 6 - Get a list of every city that an athlete from Serbia and 
+# Montenegro competed in. Count the number of males and females that 
+# ever competed in one of those cities and return these counts.
 
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
