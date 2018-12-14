@@ -1,4 +1,5 @@
-# Query 5 - List every athlete with "louis" in their name alongside the city and season that they competed in. This query uses regex.
+# Query 5 - List every athlete with "louis" in their name alongside 
+# the city and season that they competed in. This query uses regex.
 
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
