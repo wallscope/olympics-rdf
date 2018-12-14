@@ -1,4 +1,6 @@
-#QueryFTI - List every athlete with "louis" in their name alongside the city and season that they competed in. This query uses each triplestores full text index feature unlike Q5.
+# Query8FTI - List every athlete with "louis" in their name alongside 
+# the city and season that they competed in. This query uses each 
+# triplestores full text index feature unlike Q5.
 
 PREFIX luc: <http://www.ontotext.com/owlim/lucene#>
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
