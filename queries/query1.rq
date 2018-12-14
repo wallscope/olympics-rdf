@@ -1,7 +1,5 @@
 # Query 1 - List the names of every gold medallist (excluding duplicates).
 
-SPARQL
-
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 SELECT DISTINCT ?name
