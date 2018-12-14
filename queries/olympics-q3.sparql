@@ -1,10 +1,12 @@
-# Query 3 - List each country alongside the average height and weight of its athletes (sorted by the average height). 
+# Query 3 - List each country alongside the average height and 
+# weight of its athletes (sorted by the average height). 
 
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
 SELECT ?countryCode
        (AVG(?height) As ?avgHeight)
        (AVG(?weight) As ?avgWeight)
