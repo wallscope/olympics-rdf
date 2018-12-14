@@ -1,0 +1,19 @@
+# Query 4 - List each year alongside the oldest Judo competitor in that year
+
+PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dbp: <http://dbpedia.org/property/>
+SELECT ?year (MAX(?age) As ?maxAge)
+WHERE {
+ ?instance walls:games   ?games ;
+           walls:event   ?event ;
+           walls:athlete ?athlete .
+ 
+ ?event rdfs:subClassOf <http://wallscope.co.uk/resource/olympics/sport/Judo> .
+ 
+ ?games dbp:year ?year .
+ 
+ ?athlete foaf:age ?age .
+}
+GROUP BY ?year
