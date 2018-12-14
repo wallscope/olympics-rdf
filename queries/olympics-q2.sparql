@@ -1,4 +1,6 @@
-# Query 2 - List the names of every athlete, with at least one medal, alongside their total number of medals (sorted by the number of medals).
+# Query 2 - List the names of every athlete, with at least one 
+# medal, alongside their total number of medals (sorted by the 
+# number of medals).
 
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
