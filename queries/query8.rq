@@ -1,22 +1,27 @@
 ## QueryFTI - List every athlete with "louis" in their name alongside the city and season that they competed in. This query uses each triplestores full text index feature unlike Q5.
 
-PREFIX luc: <http://www.ontotext.com/owlim/lucene#>
+## This query uses Virtuoso's full text indexing so switch as required:
+## Virtuoso -  bif:contains
+## GraphDB - luc:myIndex
+## Blazegraph - bds:search
+## Stardog - <tag:stardog:api:property:textMatch>
+
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbp:   <http://dbpedia.org/property/>
 SELECT DISTINCT ?name ?cityName ?seasonName
 WHERE {
-		 ?instance walls:games   ?games ;
-		           walls:athlete ?athlete .
- 
-		 ?games dbp:location ?city ;
-		        walls:season ?season .
- 
-		 ?city rdfs:label ?cityName .
- 
-		 ?season rdfs:label ?seasonName .
- 
-		 ?athlete rdfs:label ?name .
- 
-		 ?name luc:myIndex "*louis*" .
-	 }
+?instance walls:games ?games ;
+          walls:athlete ?athlete .
+
+?games dbp:location ?city ;
+       walls:season ?season .
+
+?city rdfs:label ?cityName .
+
+?season rdfs:label ?seasonName .
+
+?athlete rdfs:label ?name .
+
+?name bif:contains "'louis*'" .
+}
