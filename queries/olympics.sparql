@@ -9,7 +9,8 @@ WHERE {
  ?athlete rdfs:label ?name .
 }
 
-# Query 2 - List the names of every athlete, with at least one medal, alongside their total number of medals (sorted by the number of medals).
+# Query 2 - List the names of every athlete, with at least one medal, 
+# alongside their total number of medals (sorted by the number of medals).
 
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -22,7 +23,8 @@ WHERE {
 GROUP BY ?name
 ORDER BY DESC(?noOfMedals)
 
-# Query 3 - List each country alongside the average height and weight of its athletes (sorted by the average height). 
+# Query 3 - List each country alongside the average height and weight 
+# of its athletes (sorted by the average height). 
 
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -64,7 +66,8 @@ WHERE {
 }
 GROUP BY ?year
 
-# Query 5 - List every athlete with "louis" in their name alongside the city and season that they competed in. This query uses regex.
+# Query 5 - List every athlete with "louis" in their name alongside the city 
+# and season that they competed in. This query uses regex.
 
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -86,7 +89,9 @@ WHERE {
  Filter (REGEX(lcase(?name),"louis.*"))
 }
 
-# Query 6 - Get a list of every city that an athlete from Serbia and Montenegro competed in. Count the number of males and females that ever competed in one of those cities and return these counts.
+# Query 6 - Get a list of every city that an athlete from Serbia and Montenegro 
+# competed in. Count the number of males and females that ever competed in one 
+# of those cities and return these counts.
 
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -121,7 +126,8 @@ WHERE {
 }
 GROUP BY ?genderName
 
-# Query 7 - List every sport's name that has a stored team size in DBpedia and return these sizes next to the corresponding sport.
+# Query 7 - List every sport's name that has a stored team size in DBpedia 
+# and return these sizes next to the corresponding sport.
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -138,7 +144,9 @@ WHERE {
  }
 }
 
-#QueryFTI - List every athlete with "louis" in their name alongside the city and season that they competed in. This query uses each triplestores full text index feature unlike Q5.
+# QueryFTI - List every athlete with "louis" in their name alongside the city 
+# and season that they competed in. This query uses each triplestores full text 
+# index feature unlike Q5.
 
 PREFIX luc: <http://www.ontotext.com/owlim/lucene#>
 PREFIX walls: <http://wallscope.co.uk/ontology/olympics/>
