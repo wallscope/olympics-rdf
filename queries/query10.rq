@@ -1,0 +1,28 @@
+## SPARQL-FED against DBpedia that surfaces DBpedia URIs while also adding ordering via ORDER BY CLAUSE
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?sport ?sportName ?teamSize
+WHERE {
+			{
+			 SELECT DISTINCT ?sportName 
+			 WHERE {
+				 	 ?sport rdf:type  dbo:Sport ;
+			         rdfs:label ?sportName .
+					}
+			}
+ 
+			 SERVICE <http://dbpedia.org/sparql> 
+			 		{
+						SELECT ?sport ?teamSize
+						FROM <http://dbpedia.org>
+						WHERE {
+							 	?sport rdfs:label ?sportName ;
+							             dbo:teamSize ?teamSize .
+							 }
+			 		}
+}
+ORDER BY DESC (?teamSize)

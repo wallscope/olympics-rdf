@@ -1,0 +1,10 @@
+##  Exploring Entities by Entity Types (Classes) using SAMPLE() aggregate function
+
+SELECT DISTINCT SAMPLE(?s) AS 
+       ?sampleEntity COUNT(1) AS 
+       ?entityCount ?o AS ?entityType
+WHERE {
+        ?s a ?o. FILTER (isIRI(?s))
+      } 
+GROUP BY ?o
+ORDER BY DESC 2
